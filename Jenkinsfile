@@ -10,6 +10,12 @@ pipeline {
 
    agent  any
     stages {
+         stage('Terraform Init') {
+            steps {
+                // Utilise le chemin absolu pour Terraform
+                sh '/usr/local/bin/terraform init'
+            }
+        }
         stage('checkout') {
             steps {
                  script{
