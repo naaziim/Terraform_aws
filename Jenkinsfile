@@ -8,7 +8,9 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
 
-   agent  any
+    agent {
+        label 'built-in' // Utiliser le nœud intégré
+    }
     stages {
         stage('checkout') {
             steps {
